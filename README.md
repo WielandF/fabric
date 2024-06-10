@@ -533,7 +533,24 @@ options:
   --transcript  Output only the transcript
   --comments    Output only the user comments
 ```
+## pe (PDF Extractor/Document Reader)
 
+`pe` is a command that extracts the text from a pdf/document, create a markedown version and save the markdown file for later use. It also can stream multiple documents  that are stored in the same file into patterns.
+
+```bash
+usage: pe [-h] [-p PAGE] [-m] [-s] filename
+
+This Module extracts all the text from a documents. By Fabian Wieland.
+
+positional arguments:
+  filename
+
+options:
+  -h, --help            show this help message and exit
+  -p PAGE, --page PAGE  Select a specific page to extract
+  -m, --markdown        Retrieve your document content in Markdown
+  -s, --save            Saves markdownfile (created with -m) utf-8 encoded as output.md
+```
 ## ts (Audio transcriptions)
 
 'ts' is a command that uses the OpenAI Whisper API to transcribe audio files. Due to the context window, this tool uses pydub to split the files into 10 minute segments. for more information on pydub, please refer https://github.com/jiaaro/pydub
